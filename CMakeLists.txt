@@ -1,4 +1,3 @@
-
 cmake_minimum_required(VERSION 2.8)
 
 if ( WIN32 AND NOT CYGWIN AND NOT ( CMAKE_SYSTEM_NAME STREQUAL "WindowsStore" ) )
@@ -24,7 +23,7 @@ find_path(BITPACKING_PROJECT_DIR NAMES SConstruct
 MARK_AS_ADVANCED(BITPACKING_PROJECT_DIR)
 
 set ( BITPACKING_CORE
-    BitSet.cpp
+    BitPacking.c
 )
 
 macro(source_group_by_dir proj_dir source_files)
@@ -70,4 +69,3 @@ endif ( )
 if ( WIN32 AND NOT CYGWIN )
 	target_compile_definitions (BitPacking PRIVATE DLL_EXPORTS)
 endif ( )
-

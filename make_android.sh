@@ -17,4 +17,3 @@ cmake --build build_x86 --config Release
 mkdir -p Plugins/Android/libs/x86/
 cp build_x86/libBitPacking.so Plugins/Android/libs/x86/libBitPacking.so
 rm -rf build_x86
-
