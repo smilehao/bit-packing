@@ -156,13 +156,13 @@ int ReadInt8(IINT8 *value, const char *data, int start)
 
 int WriteUInt8(IUINT8 value, char *data, int start)
 {
-	encode8u(data, (unsigned char)(value));
+	encode8u(data + start, (unsigned char)(value));
 	return 1;
 }
 
 int ReadUInt8(IUINT8 *value, const char *data, int start)
 {
-	decode8u(data, (unsigned char*)(value));
+	decode8u(data + start, (unsigned char*)(value));
 	return 1;
 }
 
