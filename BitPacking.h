@@ -162,15 +162,46 @@ extern "C" {
 	//---------------------------------------------------------------------
 	// interface
 	//---------------------------------------------------------------------
-	// 读写32位有符号int，ZigZig压缩，需自行保证缓冲区足够，写入时最大为5字节，返回操作的字节数
+	// 所有操作需自行保证缓冲区足够
+	// 读写8位有符号int，1字节
+	DLLEXPORITS int WriteInt8(IINT8 val, char *data, int start);
+
+	DLLEXPORITS int ReadInt8(IINT8* val, const char *data, int start);
+
+	// 读写8位无符号int，1字节
+	DLLEXPORITS int WriteUInt8(IUINT8 val, char *data, int start);
+
+	DLLEXPORITS int ReadUInt8(IUINT8* val, const char *data, int start);
+
+	// 读写16位有符号int，ZigZig压缩，写入时最大为3字节，返回操作的字节数
+	DLLEXPORITS int WriteInt16(IINT16 val, char *data, int start);
+
+	DLLEXPORITS int ReadInt16(IINT16* val, const char *data, int start);
+
+	// 读写16位无符号int，写入时最大为2字节，返回操作的字节数
+	DLLEXPORITS int WriteUInt16(IUINT16 val, char *data, int start);
+
+	DLLEXPORITS int ReadUInt16(IUINT16* val, const char *data, int start);
+
+	// 读写32位有符号int，ZigZig压缩，写入时最大为5字节，返回操作的字节数
 	DLLEXPORITS int WriteInt32(IINT32 val, char *data, int start);
 
 	DLLEXPORITS int ReadInt32(IINT32* val, const char *data, int start);
 
-	// 读写32位有符号int，需自行保证缓冲区足够，写入时最大为4字节，返回操作的字节数
+	// 读写32位无符号int，写入时最大为4字节，返回操作的字节数
 	DLLEXPORITS int WriteUInt32(IUINT32 val, char *data, int start);
 
 	DLLEXPORITS int ReadUInt32(IUINT32* val, const char *data, int start);
+
+	// 读写64位有符号int，ZigZig压缩，写入时最大为10字节，返回操作的字节数
+	DLLEXPORITS int WriteInt64(IINT64 val, char *data, int start);
+
+	DLLEXPORITS int ReadInt64(IINT64* val, const char *data, int start);
+
+	// 读写64位有符号int，写入时最大为8字节，返回操作的字节数
+	DLLEXPORITS int WriteUInt64(IUINT64 val, char *data, int start);
+
+	DLLEXPORITS int ReadUInt64(IUINT64* val, const char *data, int start);
 
 #ifdef __cplusplus
 }
